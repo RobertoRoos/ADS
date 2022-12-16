@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  pages:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,3 +22,6 @@ jobs:
       - name: Generate
         run: doxygen docs/Doxyfile
         shell: bash
+
+      - name: Publish docs
+        uses: mattnotmitt/doxygen-action@v1.9.5
