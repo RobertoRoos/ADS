@@ -33,15 +33,15 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v2
 
+      - name: Build docs
+        uses: mattnotmitt/doxygen-action@v1.9.5
+        with:
+          doxyfile-path: 'docs/Doxyfile'
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: './static_html/'
-
-      # - name: Build docs
-      #   uses: mattnotmitt/doxygen-action@v1.9.5
-      #   with:
-      #     doxyfile-path: 'docs/Doxyfile'
+          path: 'docs/html/'
 
       - name: Deploy to GitHub Pages
         id: deployment
